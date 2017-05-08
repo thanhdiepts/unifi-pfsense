@@ -20,14 +20,14 @@ FREEBSD_PACKAGE_LIST_URL="https://pkg.freebsd.org/freebsd:10:x86:${OS_ARCH}/late
 
 
 # If pkg-ng is not yet installed, bootstrap it:
-if ! /usr/sbin/pkg-static -N 2> /dev/null; then
+if ! /usr/sbin/pkg -N 2> /dev/null; then
   echo "FreeBSD pkgng not installed. Installing..."
-  env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg-static bootstrap
+  env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg bootstrap
   echo " done."
 fi
 
 # If installation failed, exit:
-if ! /usr/sbin/pkg-static -N 2> /dev/null; then
+if ! /usr/sbin/pkg -N 2> /dev/null; then
   echo "ERROR: pkgng installation failed. Exiting."
   exit 1
 fi
