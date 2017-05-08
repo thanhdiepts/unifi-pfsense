@@ -84,7 +84,7 @@ echo " done."
 echo "Installing required packages..."
 tar xv -C / -f /usr/local/share/pfSense/base.txz ./usr/bin/install
 #uncomment below for pfSense 2.2.x:
-#env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg install mongodb openjdk unzip pcre v8 snappy
+#env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg-static install mongodb openjdk unzip pcre v8 snappy
 
 fetch ${FREEBSD_PACKAGE_LIST_URL} 
 tar vfx packagesite.txz 
